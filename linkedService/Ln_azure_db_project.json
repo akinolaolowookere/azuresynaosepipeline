@@ -1,0 +1,12 @@
+{
+	"name": "Ln_azure_db_project",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=udacity-akin-server.database.windows.net;initial catalog=db_nycpayroll;user id=adminuser",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEExQUVDQzhFLTFGMDctNEJFQS1BREM2LUU0NDQ1MzY2MzU3RF9mMjkxNmUxNS1kMTJmLTRlNWQtYjM0Yi1hYmViMTgwY2M0NGYiDQp9"
+		}
+	}
+}

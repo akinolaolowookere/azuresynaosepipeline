@@ -1,0 +1,57 @@
+{
+	"name": "data_from_employee_DL_to_SynapseEmployee",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "EmpMaster_data_from_DL",
+						"type": "DatasetReference"
+					},
+					"name": "ExtractEmployeeDL"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Load_NYCPayroll_Emp_data_from_DL",
+						"type": "DatasetReference"
+					},
+					"name": "LoadSynapseEmployee"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          EmployeeID as string,",
+				"          LastName as string,",
+				"          FirstName as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> ExtractEmployeeDL",
+				"ExtractEmployeeDL sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          EmployeeID as string,",
+				"          LastName as string,",
+				"          FirstName as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
+				"     allowCopyCommand: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          EmployeeID,",
+				"          LastName,",
+				"          FirstName",
+				"     )) ~> LoadSynapseEmployee"
+			]
+		}
+	}
+}

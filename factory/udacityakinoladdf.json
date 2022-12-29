@@ -1,0 +1,17 @@
+{
+	"name": "udacityakinoladdf",
+	"properties": {
+		"globalParameters": {
+			"Global_param_fiscalyear": {
+				"type": "int",
+				"value": 2020
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5b62f381-e70c-4a71-864c-9f3948189e62",
+		"tenantId": "8176c38c-2eea-43f4-a8c7-e4a7003cb917"
+	}
+}

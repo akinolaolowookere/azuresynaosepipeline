@@ -1,0 +1,41 @@
+{
+	"name": "Pipeline Load Current Year Data from SQLDB to Synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow Year Data",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "data_from_year2021SQLDb_to_SynapseAllData",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "link_to_synapse_datalake",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "nycpayroll-synapse-akinola-olowookere/dirStaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-12-29T14:56:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
