@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "udacityakinoladdf"
+		},
+		"Ln_azure_db_project_connectionString": {
+			"value": ""
+		},
+		"Ln_azuresynapse_project_connectionString": {
+			"value": ""
+		},
+		"link_to_synapse_datalake_accountKey": {
+			"value": ""
+		},
+		"udacity_source_data_DL_accountKey": {
+			"value": ""
+		},
+		"link_to_synapse_datalake_properties_typeProperties_url": {
+			"value": "https://udacityakinolassynapse.dfs.core.windows.net/"
+		},
+		"udacity_source_data_DL_properties_typeProperties_url": {
+			"value": "https://udacityakinstorage.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

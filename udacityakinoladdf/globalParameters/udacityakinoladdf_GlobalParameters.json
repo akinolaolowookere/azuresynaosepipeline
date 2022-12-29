@@ -1,0 +1,6 @@
+{
+	"Global_param_fiscalyear": {
+		"type": "int",
+		"value": 2020
+	}
+}
